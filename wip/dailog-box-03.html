@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dailog Box</title>
+    <style>
+        #dx {
+            border-radius: 6px;
+            border: 1px solid black;
+            padding: 0;
+        }
+
+        #dx::backdrop{
+            background-color: rgba(100, 100, 100, .5);
+        }
+
+        #dx div {
+            background-color: darkslategrey;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #dx table{
+            border: 5px solid white;
+            border-spacing: 10px;
+        }
+
+        #dx table tr td:first-child{
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <dialog id="dx">
+        <div>Team</div>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>Team</td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button>Add</button>
+                   <button onclick="closedx()">Close</button>
+                </td>
+            </tr>
+        </table>
+        
+    </dialog>
+    <button onclick="opendx()">Open</button>
+
+    <script>
+        function opendx() {
+
+            const dx = document.querySelector("#dx")
+            dx.showModal()
+            return true
+
+        }
+
+        function closedx() {
+
+            const dx = document.querySelector("#dx")
+            dx.close()
+            return true
+
+        }
+    </script>
+</body>
+
+</html>

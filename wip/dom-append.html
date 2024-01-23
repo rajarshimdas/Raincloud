@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Attributes</title>
+</head>
+<body>
+    <div id="dx" 
+            data-dname="Rajarshi Das"
+            data-date-of-birth="24-Nov-1974"></div>
+    <script>
+        const dx = document.querySelector("#dx")
+        const dname = dx.dataset['dname']
+
+        /* Dash is converted to camelcase */
+        const dob = dx.dataset['dateOfBirth']
+
+        // DOM Append
+        dx.append(dname + ' (' + dob + ')')
+    </script>
+</body>
+</html>
